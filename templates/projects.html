@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head></head>
-    <body>
-        <div>
-          <h1>Jane Doe</h1>
-          <p>Hello, I'm a cereal killer.</p>
-      </div>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %}
+<div class="wrap">
+  <div id="title" class="section">
+    Projects
+  </div>
+  <div id="content" class="section">
+    <ul>
+      {% for page in pages %}
+      <li>
+        <a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a>
+      </li>
+      {% else %}
+      <li>No stuff.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% include "footer.html" %} {% endblock content %}
