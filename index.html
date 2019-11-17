@@ -1,15 +1,7 @@
-<!doctype html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-    <title>Copyright (c) UWorld, Please do not save, print, cut, copy or paste anything while a test is active.</title>
-</head>
-<body>
-    <!-- <h1><a href="{{ url_for("index") }}">My site</a></h1> -->
-{% block content %}
-    <p>Default content to be displayed</p>
+{% extends "base.html" %} {% block content %}
+<div id="splash" class="section">
+  <div class="big-link"><a href="{{ url_for('projects') }}">projects</a></div>
+  <div class="big-link"><a href="{{ url_for('writing') }}">writing</a></div>
+  <div class="big-link"><a href="https://www.alltrails.com/">free time</a></div>
+</div>
 {% endblock content %}
-</body>
-</html>
